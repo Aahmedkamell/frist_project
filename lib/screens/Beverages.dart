@@ -19,31 +19,31 @@ class HomePage extends StatelessWidget {
       "name": "Sprite Can",
       "size": "325ml",
       "price": "\$1.50",
-      "image": "assets/sprite.png"
+      "image": "images/sprite.png"
     },
     {
       "name": "Diet Coke",
       "size": "355ml",
       "price": "\$1.99",
-      "image": "assets/cocacola.png"
+      "image": "images/cocacola.png"
     },
     {
       "name": "Apple & Grape Juice",
       "size": "2L",
       "price": "\$15.50",
-      "image": "assets/applejuice.png"
+      "image": "images/applejuice.png"
     },
     {
       "name": "Coca Cola Can",
       "size": "325ml",
       "price": "\$4.99",
-      "image": "assets/cola.png"
+      "image": "images/cola.png"
     },
     {
       "name": "Pepsi Can",
       "size": "330ml",
       "price": "\$4.99",
-      "image": "assets/pepsi.png"
+      "image": "images/pepsi.png"
     },
   ];
 
@@ -54,23 +54,39 @@ class HomePage extends StatelessWidget {
         title: Text('Favourite'),
         centerTitle: true,
       ),
-      body: ListView.builder(
+      body: ListView.separated(
         itemCount: items.length,
-        itemBuilder: (context, index) {
-          return Card(
-            margin: EdgeInsets.symmetric(horizontal: 16, vertical: 8),
-            child: ListTile(
-              leading:
-                  Image.asset(items[index]['image'], width: 60, height: 60),
-              title: Text(items[index]['name'],
-                  style: TextStyle(fontWeight: FontWeight.bold, fontSize: 16)),
-              subtitle:
-                  Text(items[index]['size'], style: TextStyle(fontSize: 14)),
-              trailing: Text(items[index]['price'],
-                  style: TextStyle(fontWeight: FontWeight.bold, fontSize: 16)),
-              contentPadding: EdgeInsets.symmetric(vertical: 12, horizontal: 8),
-              onTap: () {},
+        separatorBuilder: (context, index) {
+          return Padding(
+            padding: const EdgeInsets.symmetric(horizontal: 30.0),
+            child: Divider(
+              height: 1.0,
+              color: Colors.grey[300],
             ),
+          );
+        },
+        itemBuilder: (context, index) {
+          return ListTile(
+            contentPadding: EdgeInsets.symmetric(vertical: 12, horizontal: 16),
+            leading: Image.asset(items[index]['image'], width: 60, height: 60),
+            title: Text(items[index]['name'],
+                style: TextStyle(fontWeight: FontWeight.bold, fontSize: 16)),
+            subtitle:
+                Text(items[index]['size'], style: TextStyle(fontSize: 14)),
+            trailing: Row(
+              mainAxisSize: MainAxisSize.min,
+              children: [
+                Text(items[index]['price'],
+                    style:
+                        TextStyle(fontWeight: FontWeight.bold, fontSize: 16)),
+                Icon(Icons.chevron_right, size: 24),
+              ],
+            ),
+            tileColor: Colors.white, // Background color for the tile
+            shape: RoundedRectangleBorder(
+              borderRadius: BorderRadius.circular(8.0), // Rounded corners
+            ),
+            onTap: () {},
           );
         },
       ),
@@ -86,15 +102,23 @@ class HomePage extends StatelessWidget {
               icon: Icon(Icons.account_circle), label: 'Account'),
         ],
       ),
-      floatingActionButton: FloatingActionButton.extended(
-        onPressed: () {},
-        label: Text('Add All To Cart'),
-        backgroundColor: Colors.green,
-      ),
-      floatingActionButtonLocation: FloatingActionButtonLocation.centerDocked,
       bottomSheet: Container(
-        height: 100, // Adjust height as needed
-        color: Colors.transparent,
+        margin: EdgeInsets.all(16),
+        height: 50.0,
+        width: double.infinity,
+        child: TextButton(
+          style: TextButton.styleFrom(
+            backgroundColor: Colors.green,
+            shape: RoundedRectangleBorder(
+              borderRadius: BorderRadius.circular(30.0),
+            ),
+          ),
+          onPressed: () {},
+          child: Text(
+            'Add All To Cart',
+            style: TextStyle(color: Colors.white, fontSize: 16.0),
+          ),
+        ),
       ),
     );
   }

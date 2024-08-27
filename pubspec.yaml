@@ -1,4 +1,4 @@
-name: test
+name: online_groceries_app
 description: "A new Flutter project."
 publish_to: "none" # Remove this line if you wish to publish to pub.dev
 
@@ -21,22 +21,8 @@ flutter:
   uses-material-design: true
 
   assets:
-    - images/Group_6872@2x.png
-    - images/applejuice.png
-    - images/cocacola.png
-    - images/orangejuice.png
-    - images/pepsi.png
     - images/sprite.png
-
-  # Optional: Define custom fonts here if needed
-  # fonts:
-  #   - family: Schyler
-  #     fonts:
-  #       - asset: fonts/Schyler-Regular.ttf
-  #       - asset: fonts/Schyler-Italic.ttf
-  #         style: italic
-  #   - family: Trajan Pro
-  #     fonts:
-  #       - asset: fonts/TrajanPro.ttf
-  #       - asset: fonts/TrajanPro_Bold.ttf
-  #         weight: 700
+    - images/cocacola.png
+    - images/applejuice.png
+    - images/cola.png
+    - images/pepsi.png
