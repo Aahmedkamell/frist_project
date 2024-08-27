@@ -1,4 +1,5 @@
 /*import 'package:flutter/material.dart';
+import 'order_accepts.dart';
 
 void main() {
   runApp(MyApp());
@@ -28,7 +29,6 @@ class LoginPage extends StatelessWidget {
               Text(
                 'Log in to Minty Co',
                 style: TextStyle(fontSize: 24, fontWeight: FontWeight.bold),
-                //textAlign: TextAlign.center,
               ),
               SizedBox(height: 20),
               TextField(
@@ -57,7 +57,14 @@ class LoginPage extends StatelessWidget {
               ),
               SizedBox(height: 20),
               ElevatedButton(
-                onPressed: () {},
+                onPressed: () {
+                  
+                  Navigator.push(
+                    context,
+                    MaterialPageRoute(
+                        builder: (context) => OrderConfirmationScreen()),
+                  );
+                },
                 style: ElevatedButton.styleFrom(
                   backgroundColor: Colors.green,
                   padding: EdgeInsets.symmetric(vertical: 16),
