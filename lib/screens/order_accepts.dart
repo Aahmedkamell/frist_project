@@ -1,16 +1,8 @@
-/*import 'package:flutter/material.dart';
+import 'package:flutter/material.dart';
 import 'login.dart';
+import 'carts.dart';
 
-class OrderConfirmationApp extends StatelessWidget {
-  @override
-  Widget build(BuildContext context) {
-    return MaterialApp(
-      home: OrderConfirmationScreen(),
-    );
-  }
-}
-
-class OrderConfirmationScreen extends StatelessWidget {
+class OrderConfirmationPage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -54,7 +46,13 @@ class OrderConfirmationScreen extends StatelessWidget {
                 crossAxisAlignment: CrossAxisAlignment.stretch,
                 children: [
                   ElevatedButton(
-                    onPressed: () {},
+                    onPressed: () {
+                      Navigator.push(
+                        context,
+                        MaterialPageRoute(
+                            builder: (context) => CartPage()),
+                      );
+                    },
                     style: ElevatedButton.styleFrom(
                       backgroundColor: Colors.green,
                     ),
@@ -63,7 +61,6 @@ class OrderConfirmationScreen extends StatelessWidget {
                   SizedBox(height: 10),
                   TextButton(
                     onPressed: () {
-                      
                       Navigator.pop(context);
                     },
                     child: Text(
@@ -79,4 +76,4 @@ class OrderConfirmationScreen extends StatelessWidget {
       ),
     );
   }
-}*/
+}

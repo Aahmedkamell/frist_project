@@ -1,19 +1,6 @@
-/*import 'package:flutter/material.dart';
+import 'package:flutter/material.dart';
 import 'order_accepts.dart';
-
-void main() {
-  runApp(MyApp());
-}
-
-class MyApp extends StatelessWidget {
-  @override
-  Widget build(BuildContext context) {
-    return MaterialApp(
-      debugShowCheckedModeBanner: false,
-      home: LoginPage(),
-    );
-  }
-}
+import 'carts.dart';
 
 class LoginPage extends StatelessWidget {
   @override
@@ -28,7 +15,10 @@ class LoginPage extends StatelessWidget {
             children: [
               Text(
                 'Log in to Minty Co',
-                style: TextStyle(fontSize: 24, fontWeight: FontWeight.bold),
+                style: TextStyle(
+                    fontSize: 24,
+                    color: Colors.red,
+                    fontWeight: FontWeight.bold),
               ),
               SizedBox(height: 20),
               TextField(
@@ -58,11 +48,10 @@ class LoginPage extends StatelessWidget {
               SizedBox(height: 20),
               ElevatedButton(
                 onPressed: () {
-                  
                   Navigator.push(
                     context,
                     MaterialPageRoute(
-                        builder: (context) => OrderConfirmationScreen()),
+                        builder: (context) => OrderConfirmationPage()),
                   );
                 },
                 style: ElevatedButton.styleFrom(
@@ -82,4 +71,4 @@ class LoginPage extends StatelessWidget {
       ),
     );
   }
-}*/
+}

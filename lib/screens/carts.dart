@@ -1,19 +1,6 @@
 import 'package:flutter/material.dart';
 
-void main() {
-  runApp(MyApp());
-}
-
-class MyApp extends StatelessWidget {
-  @override
-  Widget build(BuildContext context) {
-    return MaterialApp(
-      home: HomePage(),
-    );
-  }
-}
-
-class HomePage extends StatelessWidget {
+class CartPage extends StatelessWidget {
   final List<Map<String, dynamic>> items = [
     {
       "name": "Sprite Can",
@@ -82,11 +69,13 @@ class HomePage extends StatelessWidget {
                 Icon(Icons.chevron_right, size: 24),
               ],
             ),
-            tileColor: Colors.white, // Background color for the tile
+            tileColor: Colors.white,
             shape: RoundedRectangleBorder(
-              borderRadius: BorderRadius.circular(8.0), // Rounded corners
+              borderRadius: BorderRadius.circular(8.0),
             ),
-            onTap: () {},
+            onTap: () {
+              // يمكنك هنا إضافة التنقل إلى صفحة أخرى عند الضغط على العنصر
+            },
           );
         },
       ),
@@ -113,7 +102,9 @@ class HomePage extends StatelessWidget {
               borderRadius: BorderRadius.circular(30.0),
             ),
           ),
-          onPressed: () {},
+          onPressed: () {
+            // يمكنك هنا إضافة وظيفة زر "Add All To Cart"
+          },
           child: Text(
             'Add All To Cart',
             style: TextStyle(color: Colors.white, fontSize: 16.0),
